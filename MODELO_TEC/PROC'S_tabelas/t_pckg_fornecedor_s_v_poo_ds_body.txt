@@ -1,0 +1,174 @@
+create or replace PACKAGE BODY pckg_fornecedor_s_v_poo_ds IS
+
+	PROCEDURE insert_fornecedor (
+		p_nm_fornecedor          IN t_fornecedor.nm_fornecedor%TYPE,
+		p_ds_cpf_fornecedor      IN t_fornecedor.ds_cpf_fornecedor%TYPE,
+		p_ds_rg_fornecedor       IN t_fornecedor.ds_rg_fornecedor%TYPE,
+		p_sg_genero_fornecedor   IN t_fornecedor.sg_genero_fornecedor%TYPE,
+		p_dt_cadastro_fornecedor IN t_funcionario.DT_CADASTRO%TYPE DEFAULT SYSDATE
+	) IS
+		v_cd_fornecedor t_fornecedor.cd_fornecedor%TYPE;
+	BEGIN
+		SELECT
+			seq_fornecedor.NEXTVAL
+		INTO v_cd_fornecedor
+		FROM
+			dual;
+
+		INSERT INTO t_fornecedor (
+			cd_fornecedor,
+			nm_fornecedor,
+			ds_cpf_fornecedor,
+			ds_rg_fornecedor,
+			sg_genero_fornecedor,
+			dt_cadastro_fornecedor
+		) VALUES (
+			v_cd_fornecedor,
+			p_nm_fornecedor,
+			p_ds_cpf_fornecedor,
+			p_ds_rg_fornecedor,
+			p_sg_genero_fornecedor,
+			p_dt_cadastro_fornecedor
+		);
+
+		COMMIT;
+	END insert_fornecedor;
+
+	PROCEDURE insert_contato_fornecedor (
+		p_cd_fornecedor               IN t_contato_fornecedor.cd_fornecedor%TYPE,
+		p_ds_telefone_fornecedor      IN t_contato_fornecedor.ds_telefone_fornecedor%TYPE,
+		p_ds_cel_fornecedor           IN t_contato_fornecedor.ds_cel_fornecedor%TYPE,
+		p_ds_endereco_moradia_empresa IN t_contato_fornecedor.ds_endereco_moradia_empresa%TYPE
+	) IS
+		v_cd_contato_fornecedor t_contato_fornecedor.cd_contato_fornecedor%TYPE;
+	BEGIN
+		SELECT
+			seq_contato_fornecedor.NEXTVAL
+		INTO v_cd_contato_fornecedor
+		FROM
+			dual;
+
+		INSERT INTO t_contato_fornecedor (
+			cd_contato_fornecedor,
+			cd_fornecedor,
+			ds_telefone_fornecedor,
+			ds_cel_fornecedor,
+			ds_endereco_moradia_empresa
+		) VALUES (
+			v_cd_contato_fornecedor,
+			p_cd_fornecedor,
+			p_ds_telefone_fornecedor,
+			p_ds_cel_fornecedor,
+			p_ds_endereco_moradia_empresa
+		);
+
+		COMMIT;
+	END insert_contato_fornecedor;
+
+	PROCEDURE delete_fornecedor (
+		p_cd_fornecedor IN t_fornecedor.cd_fornecedor%TYPE
+	) AS
+	BEGIN
+		DELETE FROM t_fornecedor
+		WHERE
+			cd_fornecedor = p_cd_fornecedor;
+
+		COMMIT;
+	END delete_fornecedor;
+
+	PROCEDURE delete_contato_fornecedor (
+		p_cd_contato_fornecedor IN t_contato_fornecedor.cd_contato_fornecedor%TYPE
+	) AS
+	BEGIN
+		DELETE FROM t_contato_fornecedor
+		WHERE
+			cd_contato_fornecedor = p_cd_contato_fornecedor;
+
+		COMMIT;
+	END delete_contato_fornecedor;
+
+	PROCEDURE update_fornecedor (
+		p_cd_fornecedor          IN t_fornecedor.cd_fornecedor%TYPE,
+		p_nm_fornecedor          IN t_fornecedor.nm_fornecedor%TYPE,
+		p_ds_cpf_fornecedor      IN t_fornecedor.ds_cpf_fornecedor%TYPE,
+		p_ds_rg_fornecedor       IN t_fornecedor.ds_rg_fornecedor%TYPE,
+		p_sg_genero_fornecedor   IN t_fornecedor.sg_genero_fornecedor%TYPE,
+		p_dt_cadastro_fornecedor IN t_fornecedor.dt_cadastro_fornecedor%TYPE
+	) AS
+	BEGIN
+		UPDATE t_fornecedor
+		SET
+			nm_fornecedor = p_nm_fornecedor,
+			ds_cpf_fornecedor = p_ds_cpf_fornecedor,
+			ds_rg_fornecedor = p_ds_rg_fornecedor,
+			sg_genero_fornecedor = p_sg_genero_fornecedor,
+			dt_cadastro_fornecedor = p_dt_cadastro_fornecedor
+		WHERE
+			cd_fornecedor = p_cd_fornecedor;
+
+		COMMIT;
+	END update_fornecedor;
+
+	PROCEDURE update_contato_fornecedor (
+		p_cd_contato_fornecedor       IN t_contato_fornecedor.cd_contato_fornecedor%TYPE,
+		p_cd_fornecedor               IN t_contato_fornecedor.cd_fornecedor%TYPE,
+		p_ds_telefone_fornecedor      IN t_contato_fornecedor.ds_telefone_fornecedor%TYPE,
+		p_ds_cel_fornecedor           IN t_contato_fornecedor.ds_cel_fornecedor%TYPE,
+		p_ds_endereco_moradia_empresa IN t_contato_fornecedor.ds_endereco_moradia_empresa%TYPE
+	) AS
+	BEGIN
+		UPDATE t_contato_fornecedor
+		SET
+			cd_fornecedor = p_cd_fornecedor,
+			ds_telefone_fornecedor = p_ds_telefone_fornecedor,
+			ds_cel_fornecedor = p_ds_cel_fornecedor,
+			ds_endereco_moradia_empresa = p_ds_endereco_moradia_empresa
+		WHERE
+			cd_contato_fornecedor = p_cd_contato_fornecedor;
+
+		COMMIT;
+	END update_contato_fornecedor;
+
+	PROCEDURE update_contato_fornecedor (
+		p_cd_contato_fornecedor  IN t_contato_fornecedor.cd_contato_fornecedor%TYPE,
+		p_ds_telefone_fornecedor IN t_contato_fornecedor.ds_telefone_fornecedor%TYPE
+	) AS
+	BEGIN
+		UPDATE t_contato_fornecedor
+		SET
+			ds_telefone_fornecedor = p_ds_telefone_fornecedor
+		WHERE
+			cd_contato_fornecedor = p_cd_contato_fornecedor;
+
+		COMMIT;
+	END update_contato_fornecedor;
+
+	PROCEDURE select_fornecedor (
+		p_cd_fornecedor IN t_fornecedor.cd_fornecedor%TYPE,
+		p_cur_out       OUT SYS_REFCURSOR
+	) AS
+	BEGIN
+		OPEN p_cur_out FOR SELECT
+			                                      *
+		                                      FROM
+			                                      t_fornecedor
+		                   WHERE
+			                   cd_fornecedor = p_cd_fornecedor;
+
+	END select_fornecedor;
+
+	PROCEDURE select_contato_fornecedor (
+		p_cd_contato_fornecedor IN t_contato_fornecedor.cd_contato_fornecedor%TYPE,
+		p_cur_out               OUT SYS_REFCURSOR
+	) AS
+	BEGIN
+		OPEN p_cur_out FOR SELECT
+			                                      *
+		                                      FROM
+			                                      t_contato_fornecedor
+		                   WHERE
+			                   cd_contato_fornecedor = p_cd_contato_fornecedor;
+
+	END select_contato_fornecedor;
+
+END pckg_fornecedor_s_v_poo_ds;

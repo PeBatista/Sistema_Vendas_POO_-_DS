@@ -1,0 +1,161 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3B8CF74A-E9B0-8FEB-48E2-662E612437AF" name="T_CONTATO_FUNCIONARIO">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>12D10FF5-8AF4-B425-AE60-A41CDFED3F4C</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_contato_funcionario" id="D7611D8D-0E73-8D85-2D2A-D3E8A2FB77F7">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Código do Contato do funcionário]]></commentInRDBMS>
+<generatorID>75D43D79-AF47-8511-9ED9-F40C2DC85D7C</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cd_funcionario" id="E2D3AD1C-9231-F8C6-E47C-1055A1F82750">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>0B31AEA7-C1DC-CDF3-018D-5BAC716F5111</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C636AB0D-1A2B-B600-3E6B-C210314EE544" referredColumn="B170F5D4-78F9-9B29-804D-AC45511A319E"/>
+</associations>
+</Column>
+<Column name="ds_endereco_funcionario" id="2C8C7B1A-18EA-FB44-F07D-7F32E4BF911D">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>EB3D17CE-925A-1330-079E-91427733BA46</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_bairro_funcionario" id="405BE179-172B-12AC-90CB-E18F5E8B9F95">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>BAD43A3E-E849-A29F-D930-78F87F31D77A</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_complemento_funcionario" id="CF45B3F8-A65F-C7AB-E269-56C7F8837084">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>134D1D9E-6E63-245C-DD43-7D8E9CA3B7FE</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_estado_funcionario" id="B79691DA-63A8-A1F2-82BA-64EE303CE01F">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>743EC503-A79B-BBDE-EF8B-D9286E8E4D3E</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_cdde_funcionario" id="8A301093-B22F-637E-137F-CBBC128299D8">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>B9EC2ACF-54F5-E686-90D9-ADFCCE30171E</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_cel_funcionario" id="B22613B5-B94F-100F-BAE3-823639E36BCB">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>54EEEFE2-3196-2FA0-EC5F-F423A12014F6</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_cep_funcionario" id="B1A6CB55-BC9F-939B-24B2-481DA9A9630F">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>85FBAA06-D271-5E72-D06C-E60134A5946F</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13</dataTypeSize>
+<ownDataTypeParameters>13,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BB1A0901-E66E-16AD-54A0-1CFC1FBB89A6" name="PK_CONTATO_FUNCIONARIO">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>1EBC128D-3E23-E233-2F07-3FC3CD59AD6D</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D7611D8D-0E73-8D85-2D2A-D3E8A2FB77F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CFD7B660-1704-52D3-414D-8E7D0E623DC8" name="T_CONTATO_FUNCIONARIO__IDX">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>0C66C3B9-2D05-4D00-C4C5-BCB526CEC5D2</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="E2D3AD1C-9231-F8C6-E47C-1055A1F82750"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8B560233-8FC5-D513-4D46-808FC97CD104" name="FK_CONTATO_FUNCIONARIO">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>0C66C3B9-2D05-4D00-C4C5-BCB526CEC5D2</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E2D3AD1C-9231-F8C6-E47C-1055A1F82750"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,181 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BF2D670E-3843-24B0-621B-2563F2397C34" name="T_COMPRA">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:44:09 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_compra" id="34DCA009-23D6-CCB8-5868-FF33280CFB94">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:44:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[Código de compra fisíca]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_funcionario" id="3861E17F-E559-DE71-2A9C-5451903A55E4">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:45:36 UTC</createdTime>
+<generatorID>DD4FA2DA-1F7D-2DD0-5FB3-77E23E18725A</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<referedAttribute>EAACE62C-3ED2-6675-454B-3920BAC93269</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_cliente" id="91360BD0-27BB-8EA3-F6F1-FFEDC344B9C5">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:46:25 UTC</createdTime>
+<generatorID>49C88CF0-F054-AE4D-AD8C-DF3CD2BD52B9</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<referedAttribute>25769C87-B4DA-1CBD-C90D-0EB778B57C45</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dt_hora_compra" id="72889931-EA5A-F148-A13F-485986A21186">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-09 13:15:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Data e Hora da compra]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="sg_status_entrega" id="CB4C034C-4B2D-077C-EE03-FFD9031855CE">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-09 13:15:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Entregue S/N]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dt_data_entrega" id="0C1FA875-C6C4-F289-9AC7-E5F4600E8F77">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-09 13:15:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Data de entrega do Produto]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ob_observacao" id="9A4ED989-F2E7-FA08-53E3-9964FBAA85B3">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-09 13:15:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Observação da Compra]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="vl_desconto" id="5CB600A7-C11D-D238-1CFF-4C11530E2143">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-09 13:15:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Desconto Aplicado no Produto]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="vl_frete" id="BBA0652B-988D-E5BE-DFB4-AB9C81BF6105">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-09 13:15:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Frete Aplicado no Produto]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fl_compra_fis_vir" id="326D1785-E51A-9266-F528-60B8BAC7E47F">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-09 13:16:47 UTC</createdTime>
+<commentInRDBMS><![CDATA[Compra Feita Fisicamente ou Virtualmente]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3CA4E7B6-DF1B-614E-99D6-C7B843C83D8A" name="PK_COMPRA_FISICO">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:44:52 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>34DCA009-23D6-CCB8-5868-FF33280CFB94</newElementsIDs>
+<usedAttributes>
+<attributeRef>34DCA009-23D6-CCB8-5868-FF33280CFB94</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="PROJETO_TEC" id="6CBF31E6-E4FC-E836-F59D-F547FF13A37E" version="3.5">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-08 21:53:40 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>6CBF31E6-E4FC-E836-F59D-F547FF13A37E</designId>
+</OSDM_Design>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_CLIENTE_COMPRA" directorySegmentName="seg_0" id="49C88CF0-F054-AE4D-AD8C-DF3CD2BD52B9">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:46:25 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<sourcePk>0785FE91-FF18-1810-244F-849D4DBA4C80</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>310EBDB3-A487-E5DB-F42A-8B392F7B81F4</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>BF2D670E-3843-24B0-621B-2563F2397C34</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

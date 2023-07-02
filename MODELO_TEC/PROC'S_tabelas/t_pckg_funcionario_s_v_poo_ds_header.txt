@@ -1,0 +1,122 @@
+create or replace PACKAGE pckg_funcionario_s_v_poo_ds IS
+
+/******************************************************************************
+  Descrição : INSERÇÃO DE DADOS NA TABELA t_funcionario
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE insert_funcionario (
+		p_nm_funcionario         IN t_funcionario.nm_funcionario%TYPE,
+		p_ds_cargo_funcionario   IN t_funcionario.ds_cargo_funcionario%TYPE,
+		p_ds_cpf_funcionario     IN t_funcionario.ds_cpf_funcionario%TYPE,
+		p_ds_rg_funcionario      IN t_funcionario.ds_rg_funcionario%TYPE,
+		p_dt_nascimento          IN t_funcionario.dt_nascimento%TYPE,
+		p_dt_cadastro            IN t_funcionario.dt_cadastro%TYPE DEFAULT SYSDATE,
+		p_sg_genero_funcionario  IN t_funcionario.sg_genero_funcionario%TYPE
+	);
+
+/******************************************************************************
+  Descrição : INSERÇÃO DE DADOS NA TABELA t_contato_funcionario
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE insert_contato_funcionario (
+		p_cd_funcionario             IN t_contato_funcionario.cd_funcionario%TYPE,
+		p_ds_endereco_funcionario    IN t_contato_funcionario.ds_endereco_funcionario%TYPE,
+		p_ds_bairro_funcionario      IN t_contato_funcionario.ds_bairro_funcionario%TYPE,
+		p_ds_complemento_funcionario IN t_contato_funcionario.ds_complemento_funcionario%TYPE,
+		p_ds_estado_funcionario      IN t_contato_funcionario.ds_estado_funcionario%TYPE,
+		p_ds_cdde_funcionario        IN t_contato_funcionario.ds_cdde_funcionario%TYPE,
+		p_ds_cel_funcionario         IN t_contato_funcionario.ds_cel_funcionario%TYPE,
+		p_ds_cep_funcionario         IN t_contato_funcionario.ds_cep_funcionario%TYPE
+	);
+
+/******************************************************************************
+  Descrição : DELEÇÃO DE DADOS NA TABELA t_funcionario
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE delete_funcionario (
+		p_cd_funcionario IN t_funcionario.cd_funcionario%TYPE
+	);
+
+/******************************************************************************
+  Descrição : DELEÇÃO DE DADOS NA TABELA t_contato_funcionario
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE delete_contato_funcionario (
+		p_cd_contato_funcionario IN t_contato_funcionario.cd_contato_funcionario%TYPE
+	);
+
+/******************************************************************************
+  Descrição : ATUALIZAÇÃO DE DADOS NA TABELA t_funcionario
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE update_funcionario (
+		p_cd_funcionario        IN t_funcionario.cd_funcionario%TYPE,
+		p_nm_funcionario        IN t_funcionario.nm_funcionario%TYPE,
+		p_ds_cargo_funcionario  IN t_funcionario.ds_cargo_funcionario%TYPE,
+		p_ds_cpf_funcionario    IN t_funcionario.ds_cpf_funcionario%TYPE,
+		p_ds_rg_funcionario     IN t_funcionario.ds_rg_funcionario%TYPE,
+		p_dt_nascimento         IN t_funcionario.dt_nascimento%TYPE,
+		p_dt_cadastro		IN t_funcionario.dt_cadastro%TYPE,
+		p_sg_genero_funcionario IN t_funcionario.sg_genero_funcionario%TYPE
+	);
+/******************************************************************************
+  Descrição : ATUALIZAÇÃO DE DADOS NA TABELA t_contato_funcionario
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/	
+
+	PROCEDURE update_contato_funcionario (
+		p_cd_contato_funcionario        IN t_contato_funcionario.cd_contato_funcionario%TYPE,
+		p_cd_funcionario                IN t_contato_funcionario.cd_funcionario%TYPE,
+		p_ds_endereco_funcionario       IN t_contato_funcionario.ds_endereco_funcionario%TYPE,
+		p_ds_bairro_funcionario         IN t_contato_funcionario.ds_bairro_funcionario%TYPE,
+		p_ds_complemento_funcionario    IN t_contato_funcionario.ds_complemento_funcionario%TYPE,
+		p_ds_estado_funcionario         IN t_contato_funcionario.ds_estado_funcionario%TYPE,
+		p_ds_cdde_funcionario           IN t_contato_funcionario.ds_cdde_funcionario%TYPE,
+		p_ds_cel_funcionario            IN t_contato_funcionario.ds_cel_funcionario%TYPE,
+		p_ds_cep_funcionario            IN t_contato_funcionario.DS_CEP_FUNCIONARIO%TYPE
+	);
+
+/******************************************************************************
+Descrição : ATUALIZAÇÃO DE DADOS NA TABELA t_contato_funcionario COM SOBRECARGA DE ROTINA em CEP
+Projeto   : S_V_POO_DS
+Autor     : Pedro Batista Mendonça
+*******************************************************************************/
+
+	PROCEDURE update_contato_funcionario (
+	p_cd_contato_funcionario  IN t_contato_funcionario.cd_contato_funcionario%TYPE,
+	p_ds_cep_funcionario      IN t_contato_funcionario.ds_cep_funcionario%TYPE
+	);
+
+/******************************************************************************
+Descrição : SELEÇÃO DE DADOS NA TABELA t_funcionario
+Projeto   : S_V_POO_DS
+Autor     : Pedro Batista Mendonça
+*******************************************************************************/
+
+	PROCEDURE select_funcionario (
+		p_cd_funcionario IN t_funcionario.cd_funcionario%TYPE,
+		p_cur_out        OUT SYS_REFCURSOR
+	);
+
+/******************************************************************************
+Descrição : SELEÇÃO DE DADOS NA TABELA t_contato_funcionario
+Projeto   : S_V_POO_DS
+Autor     : Pedro Batista Mendonça
+*******************************************************************************/
+	PROCEDURE select_contato_funcionario (
+			p_cd_contato_funcionario IN t_contato_funcionario.cd_contato_funcionario%TYPE,
+			p_cur_out                OUT SYS_REFCURSOR
+		);
+
+END pckg_funcionario_s_v_poo_ds;

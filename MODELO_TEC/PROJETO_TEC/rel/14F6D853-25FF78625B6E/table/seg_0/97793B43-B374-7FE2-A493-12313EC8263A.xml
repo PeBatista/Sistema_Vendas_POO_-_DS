@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="97793B43-B374-7FE2-A493-12313EC8263A" name="T_PRODUTO_VENDIDO">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>EC02F137-641A-95F8-4038-D7E7C4F6DED2</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_produto" id="8DCD282D-0EE8-3DF2-5DC2-2AF3359A68A5">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>42062D2D-4536-EC71-615C-FB519B34EAB7</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A8135391-6A00-B503-1984-F83BC3D384EB" referredColumn="C6124448-5EAE-49A9-ED9A-5A1A8F66B515"/>
+</associations>
+</Column>
+<Column name="cd_compra" id="3CFF5A53-9C9F-00A5-0CD7-4AC495D3FE30">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>68FA530A-E5F3-70FB-99E6-1B564035B8F5</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0DA9102F-709C-3466-9491-5299D5C5203B" referredColumn="D1B54112-6531-F054-A342-3F1650BFE247"/>
+</associations>
+</Column>
+<Column name="ds_quantidade" id="C45F57D5-A72F-9D98-74B6-D46BCA70CA1D">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Quantidade de Produto Vendido Fisícamente]]></commentInRDBMS>
+<generatorID>42BDA4A4-8C31-3A96-9FCB-EC5D1B2CC8B1</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="23006043-EC1D-D7E0-53FD-330BA75002B8" name="PK_PRODUTO_VENDIDO_FISICO">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>0561D5CE-88E5-3B4E-2A83-A59C722DF21A</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3CFF5A53-9C9F-00A5-0CD7-4AC495D3FE30"/>
+<colUsage columnID="8DCD282D-0EE8-3DF2-5DC2-2AF3359A68A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9A3700C1-F62F-B02B-ABB7-6155D7E50838" name="FK_COMP_FISI_PROD">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>7F9F2557-2D31-4478-96D1-4D39780B61D6</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3CFF5A53-9C9F-00A5-0CD7-4AC495D3FE30"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8BA21EE7-C1BE-8DCB-D285-EF9BF2EA2B8C" name="FK_PROD_COMP_FISIv1">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>E3CBC912-E15A-0214-85B9-02621119C3C7</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8DCD282D-0EE8-3DF2-5DC2-2AF3359A68A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

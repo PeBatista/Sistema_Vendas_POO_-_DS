@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_PROD_COMP_FISIv1" directorySegmentName="seg_0" id="E3CBC912-E15A-0214-85B9-02621119C3C7">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-21 01:06:11 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<sourcePk>89558574-5C08-CF16-A422-A25EFB43FD3E</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>316C1726-21C2-F428-EE07-ACC1D65EF4FC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>EC02F137-641A-95F8-4038-D7E7C4F6DED2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

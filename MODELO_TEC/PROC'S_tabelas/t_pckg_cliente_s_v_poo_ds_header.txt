@@ -1,0 +1,125 @@
+CREATE OR REPLACE PACKAGE pckg_cliente_s_v_poo_ds IS
+ -- header de PROC'S no assunto cliente.
+/******************************************************************************
+  Descrição : INSERÇÃO DE DADOS NA TABELA t_cliente
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE insert_cliente (
+		p_nm_cliente               IN t_cliente.nm_cliente%TYPE DEFAULT NULL,
+		p_ds_tipo_cliente_virtual  IN t_cliente.ds_tipo_cliente_virtual%TYPE DEFAULT NULL,
+		p_ds_rg_cliente            IN t_cliente.ds_rg_cliente%TYPE DEFAULT NULL,
+		p_ds_senha_cliente_virtual IN t_cliente.ds_senha_cliente_virtual%TYPE DEFAULT NULL,
+		p_ds_cpf_cnpj_cliente      IN t_cliente.ds_cpf_cnpj_cliente%TYPE DEFAULT NULL,
+		p_dt_nasc_cliente_virtual  IN t_cliente.dt_nascimento_cliente_virtual%TYPE DEFAULT NULL,
+		p_fl_cli_fis_vir           IN t_cliente.fl_cli_fis_vir%TYPE DEFAULT '0'
+	);
+
+
+/******************************************************************************
+  Descrição : INSERÇÃO DE DADOS NA TABELA t__contato_cliente quando virtual
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE insert_contato_cliente_virtual (
+		p_cd_cliente                  IN t_contato_cliente_virtual.cd_cliente%TYPE,
+		p_ds_endereco_cliente_virtual IN t_contato_cliente_virtual.ds_endereco_cliente_virtual%TYPE,
+		p_ds_bairro_cliente_virtual   IN t_contato_cliente_virtual.ds_bairro_cliente_virtual%TYPE,
+		p_ds_compl_cliente_virtual    IN t_contato_cliente_virtual.ds_complemento_cliente_virtual%TYPE,
+		p_ds_estado_cliente_virtual   IN t_contato_cliente_virtual.ds_estado_cliente_virtual%TYPE,
+		p_ds_cdde_cliente_virtual     IN t_contato_cliente_virtual.ds_cdde_cliente_virtual%TYPE,
+		p_ds_cel_cliente_virtual      IN t_contato_cliente_virtual.ds_cel_cliente_virtual%TYPE,
+		p_ds_cep_cliente_virtual      IN t_contato_cliente_virtual.ds_cep_cliente_virtual%TYPE
+	);
+
+/******************************************************************************
+  Descrição : DELEÇÃO DE DADOS NA TABELA t_contato_cliente
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE delete_cliente (
+		p_cd_cliente IN t_cliente.cd_cliente%TYPE
+	);
+
+/******************************************************************************
+  Descrição : DELEÇÃO DE DADOS NA TABELA t_cliente
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE delete_contato_cliente_virtual (
+		p_cd_contato_cliente_virtual IN t_contato_cliente_virtual.cd_contato_cliente_virtual%TYPE
+	);
+
+/******************************************************************************
+  Descrição : ATUALIZAÇÃO DE DADOS NA TABELA t_cliente
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE update_cliente (
+			p_cd_cliente               IN t_cliente.cd_cliente%TYPE,
+			p_nm_cliente               IN t_cliente.nm_cliente%TYPE,
+			p_ds_tipo_cliente_virtual  IN t_cliente.ds_tipo_cliente_virtual%TYPE,
+			p_ds_rg_cliente            IN t_cliente.ds_rg_cliente%TYPE,
+			p_ds_senha_cliente_virtual IN t_cliente.ds_senha_cliente_virtual%TYPE,
+			p_ds_cpf_cnpj_cliente      IN t_cliente.ds_cpf_cnpj_cliente%TYPE,
+			p_dt_nasc_cliente_virtual  IN t_cliente.dt_nascimento_cliente_virtual%TYPE,
+			p_fl_cli_fis_vir           IN t_cliente.fl_cli_fis_vir%TYPE
+		);
+
+/******************************************************************************
+  Descrição : ATUALIZAÇÃO DE DADOS NA TABELA t_contato_cliente_virtual
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE update_contato_cliente_virtual (
+			p_cd_contato_cliente_virtual     IN t_contato_cliente_virtual.cd_contato_cliente_virtual%TYPE,
+			p_cd_cliente                     IN t_contato_cliente_virtual.cd_cliente%TYPE,
+			p_ds_endereco_cliente_virtual    IN t_contato_cliente_virtual.ds_endereco_cliente_virtual%TYPE,
+			p_ds_bairro_cliente_virtual      IN t_contato_cliente_virtual.ds_bairro_cliente_virtual%TYPE,
+			p_ds_compl_cliente_virtual 	IN t_contato_cliente_virtual.ds_complemento_cliente_virtual%TYPE,
+			p_ds_estado_cliente_virtual      IN t_contato_cliente_virtual.ds_estado_cliente_virtual%TYPE,
+			p_ds_cdde_cliente_virtual        IN t_contato_cliente_virtual.ds_cdde_cliente_virtual%TYPE,
+			p_ds_cel_cliente_virtual         IN t_contato_cliente_virtual.ds_cel_cliente_virtual%TYPE,
+			p_ds_cep_cliente_virtual         IN t_contato_cliente_virtual.ds_cep_cliente_virtual%TYPE
+		);
+
+/******************************************************************************
+  Descrição : ATUALIZAÇÃO DE DADOS NA TABELA t_contato_cliente_virtual COM sobrecarga de rotina - APENAS PARA O CEP
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE update_contato_cliente_virtual (
+	    p_cd_contato_cliente_virtual     IN t_contato_cliente_virtual.cd_contato_cliente_virtual%TYPE,
+	    p_ds_cep_cliente_virtual         IN t_contato_cliente_virtual.ds_cep_cliente_virtual%TYPE
+	);
+
+/******************************************************************************
+  Descrição : SELEÇÃO DE DADOS NA TABELA t_cliente
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE select_cliente (
+			p_cd_cliente IN t_cliente.cd_cliente%TYPE,
+			p_cur_out    OUT SYS_REFCURSOR
+		);
+		
+/******************************************************************************
+  Descrição : SELEÇÃO DE DADOS NA TABELA t_contato_cliente_virtual
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE select_contato_cliente_virtual (
+			p_cd_contato_cliente_virtual IN t_contato_cliente_virtual.cd_contato_cliente_virtual%TYPE,
+			p_cur_out                    OUT SYS_REFCURSOR
+		);
+
+END pckg_cliente_s_v_poo_ds;

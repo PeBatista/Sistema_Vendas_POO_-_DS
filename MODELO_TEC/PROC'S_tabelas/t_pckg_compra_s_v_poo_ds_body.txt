@@ -1,0 +1,136 @@
+create or replace PACKAGE BODY pckg_compra_s_v_poo_ds IS
+	PROCEDURE insert_compra (
+	p_cd_funcionario    IN t_compra.cd_funcionario%TYPE,
+	p_cd_cliente        IN t_compra.cd_cliente%TYPE,
+	p_dt_hora_compra    IN t_compra.dt_hora_compra%TYPE DEFAULT SYSDATE,
+	p_sg_status_entrega IN t_compra.sg_status_entrega%TYPE DEFAULT NULL,
+	p_dt_data_entrega   IN t_compra.dt_data_entrega%TYPE DEFAULT NULL,
+	p_ob_observacao     IN t_compra.ob_observacao%TYPE DEFAULT NULL,
+	p_vl_desconto       IN t_compra.vl_desconto%TYPE DEFAULT NULL,
+	p_vl_frete          IN t_compra.vl_frete%TYPE DEFAULT NULL,
+	p_fl_compra_fis_vir IN t_compra.fl_compra_fis_vir%TYPE DEFAULT '0'
+	)  IS
+		v_cd_compra t_compra.cd_compra%TYPE;
+	BEGIN
+	SELECT seq_compra.NEXTVAL INTO v_cd_compra FROM dual;
+
+	INSERT INTO t_compra (
+		cd_compra,
+		cd_funcionario,
+		cd_cliente,
+		dt_hora_compra,
+		sg_status_entrega,
+		dt_data_entrega,
+		ob_observacao,
+		vl_desconto,
+		vl_frete,
+		fl_compra_fis_vir
+	) VALUES (
+		v_cd_compra,
+		p_cd_funcionario,
+		p_cd_cliente,
+		p_dt_hora_compra,
+		p_sg_status_entrega,
+		p_dt_data_entrega,
+		p_ob_observacao,
+		p_vl_desconto,
+		p_vl_frete,
+		p_fl_compra_fis_vir
+	);
+
+	COMMIT;
+	END insert_compra;
+
+	PROCEDURE insert_produto_vendido (
+	p_cd_produto    IN t_produto_vendido.cd_produto%TYPE,
+	p_cd_compra     IN t_produto_vendido.cd_compra%TYPE,
+	p_ds_quantidade IN t_produto_vendido.ds_quantidade%TYPE DEFAULT 1
+	) IS
+	BEGIN
+	INSERT INTO t_produto_vendido (
+		cd_produto,
+		cd_compra,
+		ds_quantidade
+	) VALUES (
+		p_cd_produto,
+		p_cd_compra,
+		p_ds_quantidade
+	);
+	pckg_produto_s_v_poo_ds.update_produto(p_cd_produto, p_ds_quantidade);
+	COMMIT;
+	END insert_produto_vendido;
+
+	PROCEDURE delete_compra (
+		p_cd_compra IN t_compra.cd_compra%TYPE
+	) AS
+	BEGIN
+		DELETE FROM t_compra
+		WHERE
+			cd_compra = p_cd_compra;
+
+		COMMIT;
+	END delete_compra;
+
+	PROCEDURE delete_produto_vendido (
+	    p_cd_produto IN t_produto_vendido.cd_produto%TYPE,
+	    p_cd_compra IN t_produto_vendido.cd_compra%TYPE
+	) AS
+	BEGIN
+	    DELETE FROM t_produto_vendido
+	    WHERE cd_produto = p_cd_produto
+	    AND cd_compra = p_cd_compra;
+
+	    COMMIT;
+	END delete_produto_vendido;
+
+	PROCEDURE update_compra (
+	    p_cd_compra IN t_compra.cd_compra%TYPE,
+	    p_sg_status_entrega IN t_compra.sg_status_entrega%TYPE
+	) AS
+	BEGIN
+	    UPDATE t_compra
+	    SET sg_status_entrega = p_sg_status_entrega
+	    WHERE cd_compra = p_cd_compra;
+
+	    COMMIT;
+	END update_compra;
+
+	PROCEDURE update_produto_vendido (
+	    p_cd_produto IN t_produto_vendido.cd_produto%TYPE,
+	    p_cd_compra IN t_produto_vendido.cd_compra%TYPE,
+	    p_ds_quantidade IN t_produto_vendido.ds_quantidade%TYPE
+	) AS
+	BEGIN
+	    UPDATE t_produto_vendido
+	    SET ds_quantidade = p_ds_quantidade
+	    WHERE cd_produto = p_cd_produto
+	    AND cd_compra = p_cd_compra;
+
+	    COMMIT;
+	END update_produto_vendido;
+
+	PROCEDURE select_compra (
+	    p_cd_compra IN t_compra.cd_compra%TYPE,
+	    p_cur_out OUT SYS_REFCURSOR
+	) AS
+	BEGIN
+	    OPEN p_cur_out FOR
+		SELECT *
+		FROM t_compra
+		WHERE cd_compra = p_cd_compra;
+	END select_compra;
+
+	PROCEDURE select_produto_vendido (
+	    p_cd_produto IN t_produto_vendido.cd_produto%TYPE,
+	    p_cd_compra IN t_produto_vendido.cd_compra%TYPE,
+	    p_cur_out OUT SYS_REFCURSOR
+	) AS
+	BEGIN
+	    OPEN p_cur_out FOR
+		SELECT *
+		FROM t_produto_vendido
+		WHERE cd_produto = p_cd_produto
+		AND cd_compra = p_cd_compra;
+	END select_produto_vendido;
+
+END pckg_compra_s_v_poo_ds;

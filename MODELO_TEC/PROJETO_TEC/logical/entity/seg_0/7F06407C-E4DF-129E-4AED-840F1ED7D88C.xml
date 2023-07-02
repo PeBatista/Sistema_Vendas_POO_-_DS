@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7F06407C-E4DF-129E-4AED-840F1ED7D88C" name="T_CONTATO_FORNECEDOR">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:26:48 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_contato_fornecedor" id="F3611198-CD6D-EA2B-FFC3-26C6F68ABD31">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:28:09 UTC</createdTime>
+<commentInRDBMS><![CDATA[Código de Contato do Fornecedor]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_fornecedor" id="CA7FF817-0AC3-AFD0-B687-B08DF254137B">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:28:58 UTC</createdTime>
+<generatorID>A31A2E69-E1EF-A5FE-E7FB-63C5B7242949</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<referedAttribute>20186DB7-128E-B888-A4C2-30E583978D98</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_telefone_fornecedor" id="A4237993-2567-EB5F-C9FF-1B5300AADA46">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:40:59 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_cel_fornecedor" id="25107D8B-B7C4-A97C-5C8F-C3B510B75098">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:40:59 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_endereco_moradia/empresa" id="DC6894B3-FAA8-8262-AE86-7C7A76502954">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:41:37 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6B6C57F5-B27B-60B3-FD66-BA8F80095738" name="PK_CONTATO_FORNECEDOR">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:28:47 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>F3611198-CD6D-EA2B-FFC3-26C6F68ABD31</newElementsIDs>
+<usedAttributes>
+<attributeRef>F3611198-CD6D-EA2B-FFC3-26C6F68ABD31</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,203 @@
+create or replace PACKAGE BODY pckg_funcionario_s_v_poo_ds IS
+
+	PROCEDURE insert_funcionario (
+		p_nm_funcionario         IN t_funcionario.nm_funcionario%TYPE,
+		p_ds_cargo_funcionario   IN t_funcionario.ds_cargo_funcionario%TYPE,
+		p_ds_cpf_funcionario     IN t_funcionario.ds_cpf_funcionario%TYPE,
+		p_ds_rg_funcionario      IN t_funcionario.ds_rg_funcionario%TYPE,
+		p_dt_nascimento          IN t_funcionario.dt_nascimento%TYPE,
+		p_dt_cadastro            IN t_funcionario.dt_cadastro%TYPE DEFAULT SYSDATE,
+		p_sg_genero_funcionario  IN t_funcionario.sg_genero_funcionario%TYPE
+	) IS
+		v_cd_funcionario t_funcionario.cd_funcionario%TYPE;
+	BEGIN
+		SELECT
+			seq_funcionario.NEXTVAL
+		INTO v_cd_funcionario
+		FROM
+			dual;
+
+		INSERT INTO t_funcionario (
+			cd_funcionario,
+			nm_funcionario,
+			ds_cargo_funcionario,
+			ds_cpf_funcionario,
+			ds_rg_funcionario,
+			dt_nascimento,
+			dt_cadastro,
+			sg_genero_funcionario
+		) VALUES (
+			v_cd_funcionario,
+			p_nm_funcionario,
+			p_ds_cargo_funcionario,
+			p_ds_cpf_funcionario,
+			p_ds_rg_funcionario,
+			p_dt_nascimento,
+			p_dt_cadastro,
+			p_sg_genero_funcionario
+		);
+
+		COMMIT;
+	END insert_funcionario;
+
+	PROCEDURE insert_contato_funcionario (
+		p_cd_funcionario              IN t_contato_funcionario.cd_funcionario%TYPE,
+		p_ds_endereco_funcionario     IN t_contato_funcionario.ds_endereco_funcionario%TYPE,
+		p_ds_bairro_funcionario       IN t_contato_funcionario.ds_bairro_funcionario%TYPE,
+		p_ds_complemento_funcionario  IN t_contato_funcionario.ds_complemento_funcionario%TYPE,
+		p_ds_estado_funcionario       IN t_contato_funcionario.ds_estado_funcionario%TYPE,
+		p_ds_cdde_funcionario         IN t_contato_funcionario.ds_cdde_funcionario%TYPE,
+		p_ds_cel_funcionario          IN t_contato_funcionario.ds_cel_funcionario%TYPE,
+		p_ds_cep_funcionario          IN t_contato_funcionario.ds_cep_funcionario%TYPE
+	) IS
+		v_cd_contato_funcionario t_contato_funcionario.cd_contato_funcionario%TYPE;
+	BEGIN
+		SELECT
+			seq_contato_funcionario.NEXTVAL
+		INTO v_cd_contato_funcionario
+		FROM
+			dual;
+
+		INSERT INTO t_contato_funcionario (
+			cd_contato_funcionario,
+			cd_funcionario,
+			ds_endereco_funcionario,
+			ds_bairro_funcionario,
+			ds_complemento_funcionario,
+			ds_estado_funcionario,
+			ds_cdde_funcionario,
+			ds_cel_funcionario,
+			ds_cep_funcionario
+		) VALUES (
+			v_cd_contato_funcionario,
+			p_cd_funcionario,
+			p_ds_endereco_funcionario,
+			p_ds_bairro_funcionario,
+			p_ds_complemento_funcionario,
+			p_ds_estado_funcionario,
+			p_ds_cdde_funcionario,
+			p_ds_cel_funcionario,
+			p_ds_cep_funcionario
+		);
+
+		COMMIT;
+	END insert_contato_funcionario;
+
+	PROCEDURE delete_funcionario (
+		p_cd_funcionario IN t_funcionario.cd_funcionario%TYPE
+	) AS
+	BEGIN
+		DELETE FROM t_funcionario
+		WHERE
+			cd_funcionario = p_cd_funcionario;
+
+		COMMIT;
+	END delete_funcionario;
+
+	PROCEDURE delete_contato_funcionario (
+		p_cd_contato_funcionario IN t_contato_funcionario.cd_contato_funcionario%TYPE
+	) AS
+	BEGIN
+		DELETE FROM t_contato_funcionario
+		WHERE
+			cd_contato_funcionario = p_cd_contato_funcionario;
+
+		COMMIT;
+	END delete_contato_funcionario;
+
+	PROCEDURE update_funcionario (
+		p_cd_funcionario         IN t_funcionario.cd_funcionario%TYPE,
+		p_nm_funcionario         IN t_funcionario.nm_funcionario%TYPE,
+		p_ds_cargo_funcionario   IN t_funcionario.ds_cargo_funcionario%TYPE,
+		p_ds_cpf_funcionario     IN t_funcionario.ds_cpf_funcionario%TYPE,
+		p_ds_rg_funcionario      IN t_funcionario.ds_rg_funcionario%TYPE,
+		p_dt_nascimento          IN t_funcionario.dt_nascimento%TYPE,
+		p_dt_cadastro            IN t_funcionario.dt_cadastro%TYPE,
+		p_sg_genero_funcionario  IN t_funcionario.sg_genero_funcionario%TYPE
+	) AS
+	BEGIN
+		UPDATE t_funcionario
+		SET
+			nm_funcionario = p_nm_funcionario,
+			ds_cargo_funcionario = p_ds_cargo_funcionario,
+			ds_cpf_funcionario = p_ds_cpf_funcionario,
+			ds_rg_funcionario = p_ds_rg_funcionario,
+			dt_nascimento = p_dt_nascimento,
+			dt_cadastro = p_dt_cadastro,
+			sg_genero_funcionario = p_sg_genero_funcionario
+		WHERE
+			cd_funcionario = p_cd_funcionario;
+
+		COMMIT;
+	END update_funcionario;
+
+	PROCEDURE update_contato_funcionario (
+		p_cd_contato_funcionario         IN t_contato_funcionario.cd_contato_funcionario%TYPE,
+		p_cd_funcionario                 IN t_contato_funcionario.cd_funcionario%TYPE,
+		p_ds_endereco_funcionario        IN t_contato_funcionario.ds_endereco_funcionario%TYPE,
+		p_ds_bairro_funcionario          IN t_contato_funcionario.ds_bairro_funcionario%TYPE,
+		p_ds_complemento_funcionario     IN t_contato_funcionario.ds_complemento_funcionario%TYPE,
+		p_ds_estado_funcionario          IN t_contato_funcionario.ds_estado_funcionario%TYPE,
+		p_ds_cdde_funcionario            IN t_contato_funcionario.ds_cdde_funcionario%TYPE,
+		p_ds_cel_funcionario             IN t_contato_funcionario.ds_cel_funcionario%TYPE,
+		p_ds_cep_funcionario             IN t_contato_funcionario.ds_cep_funcionario%TYPE
+	) AS
+	BEGIN
+		UPDATE t_contato_funcionario
+		SET
+			cd_funcionario = p_cd_funcionario,
+			ds_endereco_funcionario = p_ds_endereco_funcionario,
+			ds_bairro_funcionario = p_ds_bairro_funcionario,
+			ds_complemento_funcionario = p_ds_complemento_funcionario,
+			ds_estado_funcionario = p_ds_estado_funcionario,
+			ds_cdde_funcionario = p_ds_cdde_funcionario,
+			ds_cel_funcionario = p_ds_cel_funcionario,
+			ds_cep_funcionario = p_ds_cep_funcionario
+		WHERE
+			cd_contato_funcionario = p_cd_contato_funcionario;
+
+		COMMIT;
+	END update_contato_funcionario;
+
+	PROCEDURE update_contato_funcionario (
+	p_cd_contato_funcionario  IN t_contato_funcionario.cd_contato_funcionario%TYPE,
+	p_ds_cep_funcionario      IN t_contato_funcionario.ds_cep_funcionario%TYPE
+	) AS
+	BEGIN
+		UPDATE t_contato_funcionario
+		SET
+			ds_cep_funcionario = p_ds_cep_funcionario
+		WHERE
+			cd_contato_funcionario = p_cd_contato_funcionario;
+
+		COMMIT;
+	END update_contato_funcionario;
+
+	PROCEDURE select_funcionario (
+		p_cd_funcionario IN t_funcionario.cd_funcionario%TYPE,
+		p_cur_out        OUT SYS_REFCURSOR
+	) AS
+	BEGIN
+		OPEN p_cur_out FOR SELECT
+					  *
+				  FROM
+					  t_funcionario
+				  WHERE
+					  cd_funcionario = p_cd_funcionario;
+	END select_funcionario;
+
+	PROCEDURE select_contato_funcionario (
+		p_cd_contato_funcionario IN t_contato_funcionario.cd_contato_funcionario%TYPE,
+		p_cur_out                OUT SYS_REFCURSOR
+	) AS
+	BEGIN
+		OPEN p_cur_out FOR SELECT
+					  *
+				  FROM
+					  t_contato_funcionario
+				  WHERE
+					  cd_contato_funcionario = p_cd_contato_funcionario;
+	END select_contato_funcionario;
+
+
+END pckg_funcionario_s_v_poo_ds;

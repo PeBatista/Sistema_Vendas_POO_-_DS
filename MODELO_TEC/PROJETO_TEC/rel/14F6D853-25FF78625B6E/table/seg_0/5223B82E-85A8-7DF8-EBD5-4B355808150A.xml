@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5223B82E-85A8-7DF8-EBD5-4B355808150A" name="T_CLIENTE">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>310EBDB3-A487-E5DB-F42A-8B392F7B81F4</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_cliente" id="742DD69A-11D7-7297-3687-F9338BC677C2">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Código do cliente Fisíco]]></commentInRDBMS>
+<generatorID>25769C87-B4DA-1CBD-C90D-0EB778B57C45</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nm_cliente" id="454D8164-7F6F-C0C0-1C4E-2C84904B7A2B">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nome do Cliente Fisíco]]></commentInRDBMS>
+<generatorID>E31EE064-A124-D19E-FF32-C89928C4369A</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_tipo_cliente_virtual" id="B3FF9D4F-BBF6-7715-F001-B234B10C39C2">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tipo de pessoa do Cliente Virtual]]></commentInRDBMS>
+<generatorID>F17B26CD-B9E9-E89B-C81A-4D926F3F794D</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_rg_cliente" id="E219360F-400B-24CF-11D1-D05CE1C6604E">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[RG do Cliente]]></commentInRDBMS>
+<generatorID>9D86E0FE-8EED-CC04-F863-71C21F1EAF8F</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_senha_cliente_virtual" id="CA4EE4EA-FBF6-B068-A5C4-261889A67887">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Senha do Cliente]]></commentInRDBMS>
+<generatorID>7591D91F-92ED-20F6-2E27-9FC5A5ADDFA1</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_cpf_cnpj_cliente" id="0F64BF0E-FB45-B039-4D6F-D1C5AE31DB48">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[CPF ou CNPJ do cliente Virtual]]></commentInRDBMS>
+<generatorID>C435DE99-A027-0E33-6050-2E196EC8D6DA</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_nascimento_cliente_virtual" id="DDAAA53C-45E4-7CA2-B972-2053FBE53CED">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Data de Nascimento do Cliente]]></commentInRDBMS>
+<generatorID>DCD6E83A-50C4-9CE7-43D7-988AE40096D1</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fl_cli_fis_vir" id="399286C3-B2B2-C299-410A-6D6A0830FB98">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cliente  Físico ou Virtual]]></commentInRDBMS>
+<generatorID>D4924BD8-D395-2F58-2074-53D4895000F7</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E8178B52-6C0D-B99C-5B29-21E19233EB81" name="PK_CLIENTE_FISICO">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>0785FE91-FF18-1810-244F-849D4DBA4C80</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="742DD69A-11D7-7297-3687-F9338BC677C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

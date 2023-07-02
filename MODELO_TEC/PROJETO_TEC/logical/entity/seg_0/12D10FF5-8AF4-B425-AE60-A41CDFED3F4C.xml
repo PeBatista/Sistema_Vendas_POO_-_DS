@@ -1,0 +1,155 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="12D10FF5-8AF4-B425-AE60-A41CDFED3F4C" name="T_CONTATO_FUNCIONARIO">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:03:17 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_contato_funcionario" id="75D43D79-AF47-8511-9ED9-F40C2DC85D7C">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:05:46 UTC</createdTime>
+<commentInRDBMS><![CDATA[Código do Contato do funcionário]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_funcionario" id="0B31AEA7-C1DC-CDF3-018D-5BAC716F5111">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:04:01 UTC</createdTime>
+<generatorID>0C66C3B9-2D05-4D00-C4C5-BCB526CEC5D2</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<referedAttribute>EAACE62C-3ED2-6675-454B-3920BAC93269</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_endereco_funcionario" id="EB3D17CE-925A-1330-079E-91427733BA46">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:34:06 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_bairro_funcionario" id="BAD43A3E-E849-A29F-D930-78F87F31D77A">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:34:06 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_complemento_funcionario" id="134D1D9E-6E63-245C-DD43-7D8E9CA3B7FE">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:34:06 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_estado_funcionario" id="743EC503-A79B-BBDE-EF8B-D9286E8E4D3E">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:34:06 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_cdde_funcionario" id="B9EC2ACF-54F5-E686-90D9-ADFCCE30171E">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:34:06 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_cel_funcionario" id="54EEEFE2-3196-2FA0-EC5F-F423A12014F6">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:34:06 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_cep_funcionario" id="85FBAA06-D271-5E72-D06C-E60134A5946F">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:34:06 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13</dataTypeSize>
+<ownDataTypeParameters>13,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1EBC128D-3E23-E233-2F07-3FC3CD59AD6D" name="PK_CONTATO_FUNCIONARIO">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:06:15 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>75D43D79-AF47-8511-9ED9-F40C2DC85D7C</newElementsIDs>
+<usedAttributes>
+<attributeRef>75D43D79-AF47-8511-9ED9-F40C2DC85D7C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

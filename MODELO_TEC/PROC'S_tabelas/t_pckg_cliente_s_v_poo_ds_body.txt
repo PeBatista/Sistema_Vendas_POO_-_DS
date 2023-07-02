@@ -1,0 +1,206 @@
+CREATE OR REPLACE PACKAGE BODY pckg_cliente_s_v_poo_ds IS
+
+	PROCEDURE insert_cliente (
+		p_nm_cliente               IN t_cliente.nm_cliente%TYPE DEFAULT NULL,
+		p_ds_tipo_cliente_virtual  IN t_cliente.ds_tipo_cliente_virtual%TYPE DEFAULT NULL,
+		p_ds_rg_cliente            IN t_cliente.ds_rg_cliente%TYPE DEFAULT NULL,
+		p_ds_senha_cliente_virtual IN t_cliente.ds_senha_cliente_virtual%TYPE DEFAULT NULL,
+		p_ds_cpf_cnpj_cliente      IN t_cliente.ds_cpf_cnpj_cliente%TYPE DEFAULT NULL,
+		p_dt_nasc_cliente_virtual  IN t_cliente.dt_nascimento_cliente_virtual%TYPE DEFAULT NULL,
+		p_fl_cli_fis_vir           IN t_cliente.fl_cli_fis_vir%TYPE DEFAULT '0'
+	) IS
+		v_cd_cliente t_cliente.cd_cliente%TYPE;
+	BEGIN
+        -- Obtém o próximo valor da sequência para a chave primária
+		SELECT
+			seq_cliente_virtual.NEXTVAL
+		INTO v_cd_cliente
+		FROM
+			dual;
+
+        -- Insere os valores na tabela
+		INSERT INTO t_cliente (
+			cd_cliente,
+			nm_cliente,
+			ds_tipo_cliente_virtual,
+			ds_rg_cliente,
+			ds_senha_cliente_virtual,
+			ds_cpf_cnpj_cliente,
+			dt_nascimento_cliente_virtual,
+			fl_cli_fis_vir
+		) VALUES (
+			v_cd_cliente,
+			p_nm_cliente,
+			p_ds_tipo_cliente_virtual,
+			p_ds_rg_cliente,
+			p_ds_senha_cliente_virtual,
+			p_ds_cpf_cnpj_cliente,
+			p_dt_nasc_cliente_virtual,
+			p_fl_cli_fis_vir
+		);
+
+		COMMIT;
+	END insert_cliente;
+
+	PROCEDURE insert_contato_cliente_virtual (
+		p_cd_cliente                  IN t_contato_cliente_virtual.cd_cliente%TYPE,
+		p_ds_endereco_cliente_virtual IN t_contato_cliente_virtual.ds_endereco_cliente_virtual%TYPE,
+		p_ds_bairro_cliente_virtual   IN t_contato_cliente_virtual.ds_bairro_cliente_virtual%TYPE,
+		p_ds_compl_cliente_virtual    IN t_contato_cliente_virtual.ds_complemento_cliente_virtual%TYPE,
+		p_ds_estado_cliente_virtual   IN t_contato_cliente_virtual.ds_estado_cliente_virtual%TYPE,
+		p_ds_cdde_cliente_virtual     IN t_contato_cliente_virtual.ds_cdde_cliente_virtual%TYPE,
+		p_ds_cel_cliente_virtual      IN t_contato_cliente_virtual.ds_cel_cliente_virtual%TYPE,
+		p_ds_cep_cliente_virtual      IN t_contato_cliente_virtual.ds_cep_cliente_virtual%TYPE
+	) IS
+		v_cd_contato_cliente_virtual t_contato_cliente_virtual.cd_contato_cliente_virtual%TYPE;
+	BEGIN
+    -- Obtém o próximo valor da sequência para a chave primária
+		SELECT
+			seq_contato_cliente_virtual.NEXTVAL
+		INTO v_cd_contato_cliente_virtual
+		FROM
+			dual;
+
+    -- Insere os valores na tabela
+		INSERT INTO t_contato_cliente_virtual (
+			cd_contato_cliente_virtual,
+			cd_cliente,
+			ds_endereco_cliente_virtual,
+			ds_bairro_cliente_virtual,
+			ds_complemento_cliente_virtual,
+			ds_estado_cliente_virtual,
+			ds_cdde_cliente_virtual,
+			ds_cel_cliente_virtual,
+			ds_cep_cliente_virtual
+		) VALUES (
+			v_cd_contato_cliente_virtual,
+			p_cd_cliente,
+			p_ds_endereco_cliente_virtual,
+			p_ds_bairro_cliente_virtual,
+			p_ds_compl_cliente_virtual,
+			p_ds_estado_cliente_virtual,
+			p_ds_cdde_cliente_virtual,
+			p_ds_cel_cliente_virtual,
+			p_ds_cep_cliente_virtual
+		);
+
+		COMMIT;
+	END insert_contato_cliente_virtual;
+
+	PROCEDURE delete_cliente (
+		p_cd_cliente IN t_cliente.cd_cliente%TYPE
+	) AS
+	BEGIN
+		DELETE FROM t_cliente
+		WHERE
+			cd_cliente = p_cd_cliente;
+
+		COMMIT;
+	END delete_cliente;
+
+	PROCEDURE delete_contato_cliente_virtual (
+		p_cd_contato_cliente_virtual IN t_contato_cliente_virtual.cd_contato_cliente_virtual%TYPE
+	) AS
+	BEGIN
+		DELETE FROM t_contato_cliente_virtual
+		WHERE
+			cd_contato_cliente_virtual = p_cd_contato_cliente_virtual;
+
+		COMMIT;
+	END delete_contato_cliente_virtual;
+
+	PROCEDURE update_cliente (
+		p_cd_cliente               IN t_cliente.cd_cliente%TYPE,
+		p_nm_cliente               IN t_cliente.nm_cliente%TYPE,
+		p_ds_tipo_cliente_virtual  IN t_cliente.ds_tipo_cliente_virtual%TYPE,
+		p_ds_rg_cliente            IN t_cliente.ds_rg_cliente%TYPE,
+		p_ds_senha_cliente_virtual IN t_cliente.ds_senha_cliente_virtual%TYPE,
+		p_ds_cpf_cnpj_cliente      IN t_cliente.ds_cpf_cnpj_cliente%TYPE,
+		p_dt_nasc_cliente_virtual  IN t_cliente.dt_nascimento_cliente_virtual%TYPE,
+		p_fl_cli_fis_vir           IN t_cliente.fl_cli_fis_vir%TYPE
+	) AS
+	BEGIN
+		UPDATE t_cliente
+		SET
+			nm_cliente = p_nm_cliente,
+			ds_tipo_cliente_virtual = p_ds_tipo_cliente_virtual,
+			ds_rg_cliente = p_ds_rg_cliente,
+			ds_senha_cliente_virtual = p_ds_senha_cliente_virtual,
+			ds_cpf_cnpj_cliente = p_ds_cpf_cnpj_cliente,
+			dt_nascimento_cliente_virtual = p_dt_nasc_cliente_virtual,
+			fl_cli_fis_vir = p_fl_cli_fis_vir
+		WHERE
+			cd_cliente = p_cd_cliente;
+
+		COMMIT;
+	END update_cliente;
+
+	PROCEDURE update_contato_cliente_virtual (
+		p_cd_contato_cliente_virtual     IN t_contato_cliente_virtual.cd_contato_cliente_virtual%TYPE,
+		p_cd_cliente                     IN t_contato_cliente_virtual.cd_cliente%TYPE,
+		p_ds_endereco_cliente_virtual    IN t_contato_cliente_virtual.ds_endereco_cliente_virtual%TYPE,
+		p_ds_bairro_cliente_virtual      IN t_contato_cliente_virtual.ds_bairro_cliente_virtual%TYPE,
+		p_ds_compl_cliente_virtual IN t_contato_cliente_virtual.ds_complemento_cliente_virtual%TYPE,
+		p_ds_estado_cliente_virtual      IN t_contato_cliente_virtual.ds_estado_cliente_virtual%TYPE,
+		p_ds_cdde_cliente_virtual        IN t_contato_cliente_virtual.ds_cdde_cliente_virtual%TYPE,
+		p_ds_cel_cliente_virtual         IN t_contato_cliente_virtual.ds_cel_cliente_virtual%TYPE,
+		p_ds_cep_cliente_virtual         IN t_contato_cliente_virtual.ds_cep_cliente_virtual%TYPE
+	) AS
+	BEGIN
+		UPDATE t_contato_cliente_virtual
+		SET
+			cd_cliente = p_cd_cliente,
+			ds_endereco_cliente_virtual = p_ds_endereco_cliente_virtual,
+			ds_bairro_cliente_virtual = p_ds_bairro_cliente_virtual,
+			ds_complemento_cliente_virtual = p_ds_compl_cliente_virtual,
+			ds_estado_cliente_virtual = p_ds_estado_cliente_virtual,
+			ds_cdde_cliente_virtual = p_ds_cdde_cliente_virtual,
+			ds_cel_cliente_virtual = p_ds_cel_cliente_virtual,
+			ds_cep_cliente_virtual = p_ds_cep_cliente_virtual
+		WHERE
+			cd_contato_cliente_virtual = p_cd_contato_cliente_virtual;
+
+		COMMIT;
+	END update_contato_cliente_virtual;
+
+	PROCEDURE update_contato_cliente_virtual (
+		    p_cd_contato_cliente_virtual     IN t_contato_cliente_virtual.cd_contato_cliente_virtual%TYPE,
+		    p_ds_cep_cliente_virtual         IN t_contato_cliente_virtual.ds_cep_cliente_virtual%TYPE
+		) AS
+		BEGIN
+		    UPDATE t_contato_cliente_virtual
+		    SET ds_cep_cliente_virtual = p_ds_cep_cliente_virtual
+		    WHERE cd_contato_cliente_virtual = p_cd_contato_cliente_virtual;
+		
+		    COMMIT;
+		END update_contato_cliente_virtual;
+
+	PROCEDURE select_cliente (
+		p_cd_cliente IN t_cliente.cd_cliente%TYPE,
+		p_cur_out    OUT SYS_REFCURSOR
+	) AS
+	BEGIN
+		OPEN p_cur_out FOR SELECT
+			                                      *
+		                                      FROM
+			                                      t_cliente
+		                   WHERE
+			                   cd_cliente = p_cd_cliente;
+
+	END select_cliente;
+
+	PROCEDURE select_contato_cliente_virtual (
+		p_cd_contato_cliente_virtual IN t_contato_cliente_virtual.cd_contato_cliente_virtual%TYPE,
+		p_cur_out                    OUT SYS_REFCURSOR
+	) AS
+	BEGIN
+		OPEN p_cur_out FOR SELECT
+			                                      *
+		                                      FROM
+			                                      t_contato_cliente_virtual
+		                   WHERE
+			                   cd_contato_cliente_virtual = p_cd_contato_cliente_virtual;
+
+	END select_contato_cliente_virtual;
+
+END pckg_cliente_s_v_poo_ds;

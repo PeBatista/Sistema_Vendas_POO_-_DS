@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_CONTATO_FUNCIONARIO" directorySegmentName="seg_0" id="0C66C3B9-2D05-4D00-C4C5-BCB526CEC5D2">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:03:38 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<targetPk>0C7C5789-5B48-FB74-C0CE-2A956CFE3BCA</targetPk>
+<dominantRole>DDC69621-830D-FBD9-2A33-04F20E682776</dominantRole>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>12D10FF5-8AF4-B425-AE60-A41CDFED3F4C</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>DDC69621-830D-FBD9-2A33-04F20E682776</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

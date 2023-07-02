@@ -1,0 +1,70 @@
+create or replace package pckg_produto_s_v_poo_ds is
+
+/******************************************************************************
+  Descrição : INSERÇÃO DE DADOS NA TABELA t_produto
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+	PROCEDURE insert_produto (
+		p_cd_fornecedor IN t_produto.cd_fornecedor%TYPE,
+		p_nm_produto    IN t_produto.nm_produto%TYPE,
+		p_ds_produto    IN t_produto.ds_produto%TYPE,
+		p_vl_preco      IN t_produto.vl_preco%TYPE,
+		p_ds_ativo      IN t_produto.ds_ativo%TYPE DEFAULT 'S',
+		p_ds_fabricante IN t_produto.ds_fabricante%TYPE,
+		p_ds_grupo      IN t_produto.ds_grupo%TYPE,
+		p_nr_estoque    IN t_produto.nr_estoque%TYPE
+	);
+
+/******************************************************************************
+  Descrição : DELEÇÃO DE DADOS NA TABELA t_produto
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE delete_produto (
+			p_cd_produto IN t_produto.cd_produto%TYPE
+	);
+
+/******************************************************************************
+  Descrição : ATUALIZAÇÃO DE DADOS NA TABELA t_produto
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE update_produto (
+		p_cd_produto    IN t_produto.cd_produto%TYPE,
+		p_cd_fornecedor IN t_produto.cd_fornecedor%TYPE,
+		p_nm_produto    IN t_produto.nm_produto%TYPE,
+		p_ds_produto    IN t_produto.ds_produto%TYPE,
+		p_vl_preco      IN t_produto.vl_preco%TYPE,
+		p_ds_ativo      IN t_produto.ds_ativo%TYPE,
+		p_ds_fabricante IN t_produto.ds_fabricante%TYPE,
+		p_ds_grupo      IN t_produto.ds_grupo%TYPE,
+		p_nr_estoque    IN t_produto.nr_estoque%TYPE
+	);
+
+
+/******************************************************************************
+  Descrição : ATUALIZAÇÃO DE DADOS NA TABELA t_produto COM SOBRECARGA DE ROTINA PARA subtrair estoque
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+	PROCEDURE update_produto (
+		p_cd_produto IN t_produto.cd_produto%TYPE,
+		p_ds_quantidade IN t_produto_vendido.ds_quantidade%TYPE 
+	);
+
+
+/******************************************************************************
+  Descrição : SELEÇÃO DE DADOS NA TABELA t_produto
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+  *******************************************************************************/
+
+  PROCEDURE select_produto (
+		p_cd_produto IN t_produto.cd_produto%TYPE,
+		p_cur_out    OUT SYS_REFCURSOR
+	);
+end pckg_produto_s_v_poo_ds;

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_CLI_CLI_VIRT" directorySegmentName="seg_0" id="2E7A0D6B-D832-9123-6859-D7381C691FB5">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-09 13:13:47 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<sourcePk>0785FE91-FF18-1810-244F-849D4DBA4C80</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>310EBDB3-A487-E5DB-F42A-8B392F7B81F4</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>EDF1712B-0E06-7B1A-C265-70AA5B0C7355</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

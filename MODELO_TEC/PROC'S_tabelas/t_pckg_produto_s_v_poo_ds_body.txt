@@ -1,0 +1,135 @@
+create or replace PACKAGE BODY pckg_produto_s_v_poo_ds IS
+
+	PROCEDURE insert_produto (
+		p_cd_fornecedor IN t_produto.cd_fornecedor%TYPE,
+		p_nm_produto    IN t_produto.nm_produto%TYPE,
+		p_ds_produto    IN t_produto.ds_produto%TYPE,
+		p_vl_preco      IN t_produto.vl_preco%TYPE,
+		p_ds_ativo      IN t_produto.ds_ativo%TYPE DEFAULT 'S',
+		p_ds_fabricante IN t_produto.ds_fabricante%TYPE,
+		p_ds_grupo      IN t_produto.ds_grupo%TYPE,
+		p_nr_estoque    IN t_produto.nr_estoque%TYPE
+	) IS
+		v_cd_produto t_produto.cd_produto%TYPE;
+	BEGIN
+		SELECT
+			seq_produto.NEXTVAL
+		INTO v_cd_produto
+		FROM
+			dual;
+
+		INSERT INTO t_produto (
+			cd_produto,
+			cd_fornecedor,
+			nm_produto,
+			ds_produto,
+			vl_preco,
+			ds_ativo,
+			ds_fabricante,
+			ds_grupo,
+			nr_estoque
+		) VALUES (
+			v_cd_produto,
+			p_cd_fornecedor,
+			p_nm_produto,
+			p_ds_produto,
+			p_vl_preco,
+			p_ds_ativo,
+			p_ds_fabricante,
+			p_ds_grupo,
+			p_nr_estoque
+		);
+
+		COMMIT;
+	END insert_produto;
+
+	PROCEDURE delete_produto (
+		p_cd_produto IN t_produto.cd_produto%TYPE
+	) AS
+	BEGIN
+		DELETE FROM t_produto
+		WHERE
+			cd_produto = p_cd_produto;
+
+		COMMIT;
+	END delete_produto;
+
+	PROCEDURE update_produto (
+		p_cd_produto    IN t_produto.cd_produto%TYPE,
+		p_cd_fornecedor IN t_produto.cd_fornecedor%TYPE,
+		p_nm_produto    IN t_produto.nm_produto%TYPE,
+		p_ds_produto    IN t_produto.ds_produto%TYPE,
+		p_vl_preco      IN t_produto.vl_preco%TYPE,
+		p_ds_ativo      IN t_produto.ds_ativo%TYPE,
+		p_ds_fabricante IN t_produto.ds_fabricante%TYPE,
+		p_ds_grupo      IN t_produto.ds_grupo%TYPE,
+		p_nr_estoque    IN t_produto.nr_estoque%TYPE
+	) AS
+	BEGIN
+		UPDATE t_produto
+		SET
+			cd_fornecedor = p_cd_fornecedor,
+			nm_produto = p_nm_produto,
+			ds_produto = p_ds_produto,
+			vl_preco = p_vl_preco,
+			ds_ativo = p_ds_ativo,
+			ds_fabricante = p_ds_fabricante,
+			ds_grupo = p_ds_grupo,
+			nr_estoque = p_nr_estoque
+		WHERE
+			cd_produto = p_cd_produto;
+
+		COMMIT;
+	END update_produto;
+
+	PROCEDURE update_produto (
+		p_cd_produto IN t_produto.cd_produto%TYPE,
+		p_ds_quantidade IN t_produto_vendido.ds_quantidade%TYPE 
+	) IS
+	v_nr_estoque t_produto.nr_estoque%TYPE;
+	BEGIN
+    -- Obter o valor atual do estoque
+		SELECT
+			nr_estoque
+		INTO v_nr_estoque
+		FROM
+			t_produto
+		WHERE
+			cd_produto = p_cd_produto;
+
+    -- Verificar se o estoque já está em 0
+		IF v_nr_estoque > 0 THEN
+        -- Atualizar o estoque
+			UPDATE t_produto
+			SET
+				nr_estoque = nr_estoque - p_ds_quantidade
+			WHERE
+				cd_produto = p_cd_produto;
+
+			COMMIT;
+		ELSE
+        -- Lançar uma exceção ou realizar alguma ação adequada quando o estoque estiver em 0
+			raise_application_error(-20001, 'Estoque esgotado para o produto.');
+		END IF;
+
+	EXCEPTION
+		WHEN no_data_found THEN
+        -- Lançar uma exceção ou realizar alguma ação adequada se o produto não for encontrado na tabela
+			raise_application_error(-20002, 'Produto não encontrado.');
+	END update_produto;
+
+	PROCEDURE select_produto (
+		p_cd_produto IN t_produto.cd_produto%TYPE,
+		p_cur_out    OUT SYS_REFCURSOR
+	) AS
+	BEGIN
+		OPEN p_cur_out FOR SELECT
+			                                      *
+		                                      FROM
+			                                      t_produto
+		                   WHERE
+			                   cd_produto = p_cd_produto;
+
+	END select_produto;
+
+END pckg_produto_s_v_poo_ds;

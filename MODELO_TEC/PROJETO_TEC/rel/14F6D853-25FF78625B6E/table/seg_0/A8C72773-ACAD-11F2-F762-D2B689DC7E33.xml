@@ -1,0 +1,189 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A8C72773-ACAD-11F2-F762-D2B689DC7E33" name="T_COMPRA">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>BF2D670E-3843-24B0-621B-2563F2397C34</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_compra" id="D1B54112-6531-F054-A342-3F1650BFE247">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Código de compra fisíca]]></commentInRDBMS>
+<generatorID>34DCA009-23D6-CCB8-5868-FF33280CFB94</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cd_funcionario" id="6BE7DE30-6310-CB3D-7F3E-9693AA2C784F">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>3861E17F-E559-DE71-2A9C-5451903A55E4</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9C9A0636-3B1D-AD83-6A4D-B32EA60F6FFD" referredColumn="B170F5D4-78F9-9B29-804D-AC45511A319E"/>
+</associations>
+</Column>
+<Column name="cd_cliente" id="9BDFCF31-01D0-4CC7-7E13-93D4C0A4578C">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>91360BD0-27BB-8EA3-F6F1-FFEDC344B9C5</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="77D53DB9-B985-C5F1-F286-BFB8919EBF69" referredColumn="742DD69A-11D7-7297-3687-F9338BC677C2"/>
+</associations>
+</Column>
+<Column name="dt_hora_compra" id="FAFD4CA2-0BD0-D99C-E022-FB82C2AE93AD">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Data e Hora da compra]]></commentInRDBMS>
+<generatorID>72889931-EA5A-F148-A13F-485986A21186</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sg_status_entrega" id="30150225-0400-E910-04CF-66C2A5163567">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Entregue S/N]]></commentInRDBMS>
+<generatorID>CB4C034C-4B2D-077C-EE03-FFD9031855CE</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_data_entrega" id="15B786B7-98BA-6BAD-F2E9-EF3E571B1CD2">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Data de entrega do Produto]]></commentInRDBMS>
+<generatorID>0C1FA875-C6C4-F289-9AC7-E5F4600E8F77</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ob_observacao" id="7126A761-90A2-1805-ACBA-D7C0CFC84AA1">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Observação da Compra]]></commentInRDBMS>
+<generatorID>9A4ED989-F2E7-FA08-53E3-9964FBAA85B3</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vl_desconto" id="E0FCF653-8A7A-A9B6-8403-8025385526A0">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Desconto Aplicado no Produto]]></commentInRDBMS>
+<generatorID>5CB600A7-C11D-D238-1CFF-4C11530E2143</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vl_frete" id="17440372-60A1-BEB5-BE50-521959580DA4">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Frete Aplicado no Produto]]></commentInRDBMS>
+<generatorID>BBA0652B-988D-E5BE-DFB4-AB9C81BF6105</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fl_compra_fis_vir" id="8BA9DA17-3D10-ADCE-0EE4-AE48B38F31A2">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Compra Feita Fisicamente ou Virtualmente]]></commentInRDBMS>
+<generatorID>326D1785-E51A-9266-F528-60B8BAC7E47F</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FDD90E73-2FCB-60F9-3613-C71E78787F57" name="PK_COMPRA_FISICO">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>3CA4E7B6-DF1B-614E-99D6-C7B843C83D8A</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1B54112-6531-F054-A342-3F1650BFE247"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AB745BB3-E272-071A-B28D-CF3A11BFA9F6" name="FK_CLIENTE_COMPRA">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>49C88CF0-F054-AE4D-AD8C-DF3CD2BD52B9</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9BDFCF31-01D0-4CC7-7E13-93D4C0A4578C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A6B47D76-A3A0-4B96-5FFB-91622559A8F5" name="FK_FUNCIO_COMPRA">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-10 02:21:43 UTC</createdTime>
+<generatorID>DD4FA2DA-1F7D-2DD0-5FB3-77E23E18725A</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BE7DE30-6310-CB3D-7F3E-9693AA2C784F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

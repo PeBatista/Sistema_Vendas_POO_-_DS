@@ -1,0 +1,93 @@
+create or replace PACKAGE pckg_compra_s_v_poo_ds IS
+
+/******************************************************************************
+  Descrição : INSERÇÃO DE DADOS NA TABELA t_compra
+  Projeto   : S_V_POO_DS
+  Autor     : Pedro Batista Mendonça
+*******************************************************************************/
+
+	PROCEDURE insert_compra (
+		p_cd_funcionario    IN t_compra.cd_funcionario%TYPE,
+		p_cd_cliente        IN t_compra.cd_cliente%TYPE,
+		p_dt_hora_compra    IN t_compra.dt_hora_compra%TYPE DEFAULT SYSDATE,
+		p_sg_status_entrega IN t_compra.sg_status_entrega%TYPE DEFAULT NULL,
+		p_dt_data_entrega   IN t_compra.dt_data_entrega%TYPE DEFAULT NULL,
+		p_ob_observacao     IN t_compra.ob_observacao%TYPE DEFAULT NULL,
+		p_vl_desconto       IN t_compra.vl_desconto%TYPE DEFAULT NULL,
+		p_vl_frete          IN t_compra.vl_frete%TYPE DEFAULT NULL,
+		p_fl_compra_fis_vir IN t_compra.fl_compra_fis_vir%TYPE DEFAULT '0'
+	);
+
+	/******************************************************************************
+	  Descrição : INSERÇÃO DE DADOS NA TABELA t_produto_vendido
+	  Projeto   : S_V_POO_DS
+	  Autor     : Pedro Batista Mendonça
+	*******************************************************************************/
+	PROCEDURE insert_produto_vendido (
+		p_cd_produto    IN t_produto_vendido.cd_produto%TYPE,
+		p_cd_compra     IN t_produto_vendido.cd_compra%TYPE,
+		p_ds_quantidade IN t_produto_vendido.ds_quantidade%TYPE DEFAULT 1
+	);
+
+	/******************************************************************************
+	  Descrição : EXCLUSÃO DE DADOS DA TABELA t_compra
+	  Projeto   : S_V_POO_DS
+	  Autor     : Pedro Batista Mendonça
+	*******************************************************************************/
+	PROCEDURE delete_compra (
+		p_cd_compra IN t_compra.cd_compra%TYPE
+	);
+
+	/******************************************************************************
+	  Descrição : EXCLUSÃO DE DADOS DA TABELA t_produto_vendido
+	  Projeto   : S_V_POO_DS
+	  Autor     : Pedro Batista Mendonça
+	*******************************************************************************/
+	PROCEDURE delete_produto_vendido (
+		p_cd_produto IN t_produto_vendido.cd_produto%TYPE,
+		p_cd_compra  IN t_produto_vendido.cd_compra%TYPE
+	);
+
+	/******************************************************************************
+	  Descrição : ATUALIZAÇÃO DE DADOS NA TABELA t_compra
+	  Projeto   : S_V_POO_DS
+	  Autor     : Pedro Batista Mendonça
+	*******************************************************************************/
+	PROCEDURE update_compra (
+		p_cd_compra           IN t_compra.cd_compra%TYPE,
+		p_sg_status_entrega   IN t_compra.sg_status_entrega%TYPE
+	);
+
+	/******************************************************************************
+	  Descrição : ATUALIZAÇÃO DE DADOS NA TABELA t_produto_vendido
+	  Projeto   : S_V_POO_DS
+	  Autor     : Pedro Batista Mendonça
+	*******************************************************************************/
+	PROCEDURE update_produto_vendido (
+		p_cd_produto        IN t_produto_vendido.cd_produto%TYPE,
+		p_cd_compra         IN t_produto_vendido.cd_compra%TYPE,
+		p_ds_quantidade     IN t_produto_vendido.ds_quantidade%TYPE
+	);
+
+	/******************************************************************************
+	  Descrição : CONSULTA DE DADOS NA TABELA t_compra
+	  Projeto   : S_V_POO_DS
+	  Autor     : Pedro Batista Mendonça
+	*******************************************************************************/
+	PROCEDURE select_compra (
+		p_cd_compra IN t_compra.cd_compra%TYPE,
+		p_cur_out   OUT SYS_REFCURSOR
+	);
+
+	/******************************************************************************
+	  Descrição : CONSULTA DE DADOS NA TABELA t_produto_vendido
+	  Projeto   : S_V_POO_DS
+	  Autor     : Pedro Batista Mendonça
+	*******************************************************************************/
+	PROCEDURE select_produto_vendido (
+		p_cd_produto IN t_produto_vendido.cd_produto%TYPE,
+		p_cd_compra  IN t_produto_vendido.cd_compra%TYPE,
+		p_cur_out    OUT SYS_REFCURSOR
+	);
+
+END pckg_compra_s_v_poo_ds;

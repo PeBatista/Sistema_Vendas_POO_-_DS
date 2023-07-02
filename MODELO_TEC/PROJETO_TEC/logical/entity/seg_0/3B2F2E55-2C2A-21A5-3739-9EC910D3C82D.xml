@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3B2F2E55-2C2A-21A5-3739-9EC910D3C82D" name="T_FORNECEDOR">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:20:21 UTC</createdTime>
+<comment><![CDATA[Tabela de Fornecedor]]></comment>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_fornecedor" id="20186DB7-128E-B888-A4C2-30E583978D98">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:21:17 UTC</createdTime>
+<commentInRDBMS><![CDATA[Código do Fornecedor ]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_fornecedor" id="67733FB2-D7CE-EBA4-55DE-C04A335D4BB0">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:43:19 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nome do Fornecedor]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_cpf_fornecedor" id="1ED9C5AB-36DE-EDB1-EDBF-704DAFD24E9B">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:38:38 UTC</createdTime>
+<commentInRDBMS><![CDATA[CPF do Fornecedor ]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>14,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_rg_fornecedor" id="D3B0780B-7CAD-B1A4-2385-055D906E8D0A">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:38:38 UTC</createdTime>
+<commentInRDBMS><![CDATA[RG do Fornecedor ]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="sg_genero_fornecedor" id="2B9F319E-17BF-82ED-FF4A-B63879B86734">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:38:38 UTC</createdTime>
+<commentInRDBMS><![CDATA[Gênero do Fornecedor]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dt_cadastro_fornecedor" id="4B806A5B-3914-DF86-50E6-59C5D70DE560">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:38:38 UTC</createdTime>
+<commentInRDBMS><![CDATA[Data de cadastro do Fornecedor]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="33DB6020-D290-F884-4BCB-CE206FBD58AE" name="PK_FORNECEDOR">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:28:57 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>20186DB7-128E-B888-A4C2-30E583978D98</newElementsIDs>
+<usedAttributes>
+<attributeRef>20186DB7-128E-B888-A4C2-30E583978D98</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

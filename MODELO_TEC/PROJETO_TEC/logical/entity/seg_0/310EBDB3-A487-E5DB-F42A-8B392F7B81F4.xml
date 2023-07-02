@@ -1,0 +1,151 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="310EBDB3-A487-E5DB-F42A-8B392F7B81F4" name="T_CLIENTE">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:37:18 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_cliente" id="25769C87-B4DA-1CBD-C90D-0EB778B57C45">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:37:35 UTC</createdTime>
+<commentInRDBMS><![CDATA[Código do cliente Fisíco]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_cliente" id="E31EE064-A124-D19E-FF32-C89928C4369A">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 20:02:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nome do Cliente Fisíco]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_tipo_cliente_virtual" id="F17B26CD-B9E9-E89B-C81A-4D926F3F794D">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-09 13:04:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tipo de pessoa do Cliente Virtual]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_rg_cliente" id="9D86E0FE-8EED-CC04-F863-71C21F1EAF8F">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-09 13:04:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[RG do Cliente]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_senha_cliente_virtual" id="7591D91F-92ED-20F6-2E27-9FC5A5ADDFA1">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-09 13:04:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[Senha do Cliente]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_cpf_cnpj_cliente" id="C435DE99-A027-0E33-6050-2E196EC8D6DA">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-09 13:04:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[CPF ou CNPJ do cliente Virtual]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dt_nascimento_cliente_virtual" id="DCD6E83A-50C4-9CE7-43D7-988AE40096D1">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-09 13:04:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[Data de Nascimento do Cliente]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fl_cli_fis_vir" id="D4924BD8-D395-2F58-2074-53D4895000F7">
+<createdBy>T600356</createdBy>
+<createdTime>2023-06-09 13:06:42 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cliente  Físico ou Virtual]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0785FE91-FF18-1810-244F-849D4DBA4C80" name="PK_CLIENTE_FISICO">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:39:23 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>25769C87-B4DA-1CBD-C90D-0EB778B57C45</newElementsIDs>
+<usedAttributes>
+<attributeRef>25769C87-B4DA-1CBD-C90D-0EB778B57C45</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

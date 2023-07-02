@@ -1,0 +1,164 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="316C1726-21C2-F428-EE07-ACC1D65EF4FC" name="T_PRODUTO">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-08 21:57:34 UTC</createdTime>
+<comment><![CDATA[Tabela de Produtos do Sistema Tecnobyte]]></comment>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_produto" id="2B3B2BF7-8364-5265-4B92-20341DAA2E74">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-08 22:01:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[Código do Produto ]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_fornecedor" id="917E303A-CBA4-9A0A-DC23-4FD37F14ADE9">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:28:58 UTC</createdTime>
+<generatorID>7B06542C-E5AD-BB8E-477F-C9CC26E7DBF6</generatorID>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<referedAttribute>20186DB7-128E-B888-A4C2-30E583978D98</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_produto" id="CD612460-9667-919F-AF3D-855A0BF9D393">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-15 18:27:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nome do Produto]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_produto" id="D401D4AF-207B-35B3-7E6D-13CE02DFA0E0">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-08 22:04:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Descrição do Produtio]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="vl_preco" id="DFB8F5D3-110D-E10B-1005-FEC5BE5CC8DF">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-08 22:05:41 UTC</createdTime>
+<commentInRDBMS><![CDATA[Preço do Custo do Produto]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,9,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_ativo" id="811CD548-DA18-8706-4F2C-A52013998458">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-08 22:07:35 UTC</createdTime>
+<commentInRDBMS><![CDATA[Ativo do Produto,(S ou N)]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_fabricante" id="2ACF1123-E80A-7378-4012-DECE0E40A1A2">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-08 22:14:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fabricante do Produto]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_grupo" id="B372F8E9-545A-34ED-6C0F-2EFBA19194C5">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-08 22:14:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[Descrição do Grupo do Produto]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nr_estoque" id="9E8BD62B-C45B-79A3-0A48-C199A15312BA">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-08 22:16:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Quantidade de Estoque do Produto]]></commentInRDBMS>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="89558574-5C08-CF16-A422-A25EFB43FD3E" name="PK_PRODUTO">
+<createdBy>marco</createdBy>
+<createdTime>2022-08-08 22:02:02 UTC</createdTime>
+<ownerDesignName>PROJETO_TEC</ownerDesignName>
+<engineerTo>
+<item key="14F6D853-39BC-0FE4-09A6-25FF78625B6E" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>2B3B2BF7-8364-5265-4B92-20341DAA2E74</newElementsIDs>
+<usedAttributes>
+<attributeRef>2B3B2BF7-8364-5265-4B92-20341DAA2E74</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
